@@ -30,9 +30,10 @@ var server = http.createServer(function(request, response){
         '.css':'text/css',
         '.js':'text/javascript',
         '.jpg':'text/jpeg',
-        'png':'text.png'
+        '.png':'text/png'
     }
     response.setHeader('Content-Type', `${fileTypes[suffix] || 'text/html'};charset=utf-8`)
+    // console.log(suffix)
     let content 
     try{
         content = fs.readFileSync(`./public${filePath}`)
